@@ -14,7 +14,7 @@
                   is
                   '(logic cool)]
             "___" [succeed]}]
- ["goals" {"__" [son
+ ["genealogy" {"__" [son
                  parent
                  (conde
                    [(== x 'Jenny) (== y 'guitar)])
