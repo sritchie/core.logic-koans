@@ -12,8 +12,13 @@
                   [1 2]
                   [1 2]
                   is
-                  '(logic cool)]
+                  '(logic cool)
+                  ()
+                  '(another-answer)
+                  '(an-answer)
+                  ]
             "___" [succeed]}]
+ 
  ["genealogy" {"__" [son
                      parent
                      (conde
@@ -22,7 +27,15 @@
                      ]}]
 
  ["goals" {"__" [a
+                 y
                  'a
                  (b c)
-                 a]}]
+                 a
+                 '_.0
+                 '(cat dog bird)
+                 '(dog bird)
+                 (lcons 'cat '_.0)
+                 (llist '_.0 'cat '_.1)
+                 ]
+           "___" ['_.1]}]
  ]

@@ -2,7 +2,7 @@
  "fail is a goal that fails. A goal is some statement we would like to
 satisfy. run* lets us to specify a series of goals we would like to
 satisfy. run* always returns a sequence. The empty sequence means that
-there no value q such that q can satisfy the goals. This makes sense,
+there is no value q such that q can satisfy the goals. This makes sense,
 fail can never succeed."
  (= (run* [q] fail)
     __)
@@ -19,7 +19,7 @@ succeeds such that it does not matter what value q is."
  (= (run* [q] __ ___)
     '(_.0))
 
- "We know of two goals, succeed and fail. Since run* is like AND if
+ "We know of two goals, succeed and fail. Since run* is like AND, if
 any goal fails, the entire program fails."
  (= (run* [q] succeed fail)
     __)
@@ -83,4 +83,29 @@ that's ok, the others will be tried."
                [fail (== q 'is)]
                [(== q 'cool)]))]
    (= ans __))
+
+ "Does this return any answers?"
+ (= (run* [q]
+       (conde
+         [(== q 'an-answer)]
+         [(== q 'another-answer)])
+       fail)
+     __)
+
+ "What answers does this return?"
+ (= (run* [q]
+       (conde
+         [(== q 'an-answer) fail]
+         [(== q 'another-answer)])
+       succeed)
+     __)
+
+ "How about this one?"
+ (= (run* [q]
+       (fresh [x]
+         (conde
+           [(== q 'an-answer) (== x 1)]
+           [(== q 'another-answer) (== x 2)])
+         (== x 1)))
+     __)
  )

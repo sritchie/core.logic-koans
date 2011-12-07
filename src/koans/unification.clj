@@ -7,7 +7,7 @@
         (== q [a b])))
     '([__ ___]))
 
- "We can unify persitent maps. Note you should not have logic vars
+ "We can unify persistent maps. Note you should not have logic vars
 in the keys of a map. What value will q take?"
  (= (run* [q]
       (fresh [x]
