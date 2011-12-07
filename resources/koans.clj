@@ -15,8 +15,14 @@
                   '(logic cool)]
             "___" [succeed]}]
  ["genealogy" {"__" [son
-                 parent
-                 (conde
-                   [(== x 'Jenny) (== y 'guitar)])
-                 (grandparent y x)
-                 ]}]]
+                     parent
+                     (conde
+                       [(== x 'Jenny) (== y 'guitar)])
+                     (grandparent y x)
+                     ]}]
+
+ ["goals" {"__" [a
+                 'a
+                 (b c)
+                 a]}]
+ ]
