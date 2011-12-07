@@ -1,9 +1,17 @@
 (meditations
- "What value will a and b take?"
+ "Note that sequences and vectors can be unified. What value will a and b take?"
  (= (run* [q]
       (fresh [a b x y]
         (== x [1 a])
-        (== y [b 2])
+        (== y `(,b 2))
         (== q [a b])))
-    '([1 2]))
+    '([__ ___]))
+
+ "We can unify persitent maps. Note you should not have logic vars
+in the keys of a map. What value will q take?"
+ (= (run* [q]
+      (fresh [x]
+        (== x {:foo 1})
+        (== x {:foo q})))
+    '(__))
  )
